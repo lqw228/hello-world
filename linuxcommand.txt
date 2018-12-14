@@ -1,0 +1,2 @@
+修改网卡地址：
+/etc/sysconfig/network-scripts
