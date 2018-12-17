@@ -1,2 +1,17 @@
 修改网卡地址：
 /etc/sysconfig/network-scripts
+
+docker run -d --hostname gitlab.example.com\
+    -p 443:443 -p 8181:80 -p 2222:22 \
+    --name gitlab2 \
+    --restart always \
+    -v /srv/gitlab/config:/etc/gitlab \
+    -v /srv/gitlab/logs:/var/log/gitlab \
+    -v /srv/gitlab/data:/var/opt/gitlab \
+    -v /etc/localtime:/etc/localtime
+    gitlab/gitlab-ce:latest
+	
+sudo docker run -d -p 8443:443 -p 8081:8081 -p 8022:22 --name gitlab3 --restart always --volume /root/dockerData/gitlab/config:/etc/gitlab --volume /root/dockerData/gitlab/logs:/var/log/gitlab --volume /root/dockerData/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
+
+
+--------------------- 
